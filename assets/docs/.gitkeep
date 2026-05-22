@@ -1,0 +1,9 @@
+# Place project documents (PDFs) here.
+#
+# Expected file names (referenced from the Resources section in index.html):
+#
+#   kics-paper.pdf          <- KICS (한국통신학회) conference paper
+#   competition-poster.pdf  <- in-school competition poster
+#
+# Drop the PDFs into this folder with exactly these names and the
+# "Publications & Poster" section will link to / preview them automatically.
