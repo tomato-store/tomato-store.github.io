@@ -26,19 +26,12 @@
     try { savedLang = localStorage.getItem(STORAGE_KEY) || 'en'; } catch (e) {}
     applyLanguage(savedLang);
 
-    var langSwitch = document.getElementById('langSwitch');
+    var langToggle = document.getElementById('langToggle');
     function toggleLanguage() {
         applyLanguage(htmlEl.getAttribute('lang') === 'en' ? 'ko' : 'en');
     }
-    if (langSwitch) {
-        langSwitch.addEventListener('click', toggleLanguage);
-        langSwitch.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleLanguage();
-            }
-        });
-    }
+    // It's a real <button>, so Enter/Space activation is handled natively.
+    if (langToggle) { langToggle.addEventListener('click', toggleLanguage); }
 
     /* ---------- Mobile nav toggle ---------- */
     var navToggle = document.getElementById('navToggle');
@@ -87,21 +80,6 @@
         revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* ---------- Active nav link on scroll ---------- */
-    var sections = document.querySelectorAll('section[id]');
-    var navLinks = document.querySelectorAll('.nav-menu ul a');
-
-    function highlightNav() {
-        var pos = window.scrollY + 90;
-        var currentId = '';
-        sections.forEach(function (sec) {
-            if (sec.offsetTop <= pos) { currentId = sec.id; }
-        });
-        navLinks.forEach(function (link) {
-            link.classList.toggle('active',
-                link.getAttribute('href') === '#' + currentId);
-        });
-    }
-    highlightNav();
-    window.addEventListener('scroll', highlightNav, { passive: true });
+    /* Active nav link is rendered per-page by Jekyll (page.url match),
+       so no scroll-based highlighting is needed on the multi-page site. */
 })();

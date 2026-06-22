@@ -1,6 +1,6 @@
 /* ===================================================================
-   Tomato Store — Project Homepage
-   Pastel-green theme · single-page scroll
+   Tomato Store — Project site
+   Pastel-green theme · Jekyll multi-page
    =================================================================== */
 
 :root {
@@ -86,43 +86,28 @@ img { max-width: 100%; display: block; }
     border-color: var(--green);
 }
 
-/* language switch */
-.lang-switch {
-    position: relative;
-    display: flex;
+/* language toggle — single button, label swaps in place (EN ⇄ 한글) */
+.lang-toggle {
+    display: inline-flex;
     align-items: center;
-    width: 96px;
+    gap: 6px;
     height: 34px;
+    padding: 0 15px;
     background: var(--green-tint);
     border: 1px solid var(--green-soft);
     border-radius: 999px;
+    color: var(--green-deep);
+    font-family: inherit;
+    font-size: .82rem;
+    font-weight: 600;
+    line-height: 1;
     cursor: pointer;
     user-select: none;
     flex-shrink: 0;
+    transition: background .2s ease, border-color .2s ease;
 }
-.lang-opt {
-    flex: 1;
-    text-align: center;
-    font-size: .8rem;
-    font-weight: 600;
-    color: var(--muted);
-    z-index: 2;
-    transition: color .25s ease;
-}
-.lang-knob {
-    position: absolute;
-    top: 3px; left: 3px;
-    width: calc(50% - 3px);
-    height: 28px;
-    background: var(--green);
-    border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(58, 90, 64, .25);
-    transition: transform .25s ease;
-    z-index: 1;
-}
-html[lang="ko"] .lang-knob { transform: translateX(100%); }
-html[lang="en"] .lang-opt[data-lang="en"],
-html[lang="ko"] .lang-opt[data-lang="ko"] { color: #fff; }
+.lang-toggle:hover { background: var(--green-soft); border-color: var(--green); }
+.lang-toggle .lang-current { min-width: 2.6em; text-align: center; }
 
 /* hamburger */
 .nav-toggle {
@@ -252,6 +237,10 @@ html[lang="ko"] .lang-opt[data-lang="ko"] { color: #fff; }
 .section { padding: clamp(64px, 9vw, 110px) clamp(20px, 6vw, 60px); }
 .section-alt { background: var(--green-tint); }
 .section-inner { max-width: var(--maxw); margin: 0 auto; }
+
+/* Standalone pages: the first section sits directly below the fixed
+   navbar, so add its height (68px) to the top padding to avoid overlap. */
+main > .section:first-of-type { padding-top: calc(68px + clamp(32px, 6vw, 56px)); }
 
 .section-tag {
     font-weight: 600;

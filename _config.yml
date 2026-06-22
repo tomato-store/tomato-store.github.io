@@ -1,0 +1,21 @@
+# ===================================================================
+# Tomato Store — Project site (Jekyll / GitHub Pages)
+# ===================================================================
+title: Tomato Store
+description: >-
+  KMU UROP Project — a fully automated plant cultivation and harvesting
+  system orchestrated by a Master AI over ROS 2.
+
+# User/organization site → served from the domain root.
+url: "https://tomato-store.github.io"
+baseurl: ""
+
+lang: en
+
+# Files that should not be copied into the built site.
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
