@@ -438,14 +438,6 @@ html[lang="ko"] .lang-opt[data-lang="ko"] { color: #fff; }
 }
 .resource-card h3 { color: var(--green-deep); font-size: 1.15rem; margin-bottom: 8px; }
 .resource-card p { font-size: .95rem; color: var(--muted); margin-bottom: 18px; }
-.poster-frame {
-    width: 100%;
-    height: 460px;
-    border: 1px solid var(--green-soft);
-    border-radius: 12px;
-    background: var(--green-tint);
-    margin-bottom: 18px;
-}
 
 /* ===================== TEAM ===================== */
 .team-grid {
