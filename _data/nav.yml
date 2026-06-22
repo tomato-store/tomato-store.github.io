@@ -1,0 +1,27 @@
+# Primary navigation — single source of truth for the navbar.
+# `url` must match each page's `permalink` (trailing slash) so the
+# active-link highlight works.
+- key: about
+  url: /about/
+  en: About
+  ko: 소개
+- key: system
+  url: /system/
+  en: System
+  ko: 시스템 구조
+- key: tech
+  url: /tech/
+  en: Tech
+  ko: 기술 스택
+- key: gallery
+  url: /gallery/
+  en: Gallery
+  ko: 갤러리
+- key: resources
+  url: /resources/
+  en: Resources
+  ko: 자료
+- key: team
+  url: /team/
+  en: Team
+  ko: 팀
