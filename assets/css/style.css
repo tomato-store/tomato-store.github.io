@@ -86,11 +86,10 @@ img { max-width: 100%; display: block; }
     border-color: var(--green);
 }
 
-/* language toggle — single button, label swaps in place (EN ⇄ 한글) */
+/* language toggle — single button, label swaps in place (EN ⇄ KO) */
 .lang-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
     height: 34px;
     padding: 0 15px;
     background: var(--green-tint);
