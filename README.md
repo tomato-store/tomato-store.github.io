@@ -6,25 +6,31 @@ Project website for **Tomato Store**, built with Jekyll and served via GitHub Pa
 
 ## Structure
 
-The site is a Jekyll multi-page site — one page per section:
+The site is a single-page Jekyll site. `index.html` holds every section,
+and the navbar links are in-page anchors:
 
-| URL          | Source file      | Section                  |
-| ------------ | ---------------- | ------------------------ |
-| `/`          | `index.html`     | Home (hero)              |
-| `/about/`    | `about.html`     | About the project        |
-| `/system/`   | `system.html`    | System architecture      |
-| `/tech/`     | `tech.html`      | Tech stack               |
-| `/gallery/`  | `gallery.html`   | Gallery & demo           |
-| `/resources/`| `resources.html` | Publications & poster    |
-| `/team/`     | `team.html`      | Team                     |
+| Anchor      | Section                              |
+| ----------- | ------------------------------------ |
+| `#hero`     | Hero — title, links (paper, poster)  |
+| `#about`    | About the project                    |
+| `#system`   | System architecture                  |
+| `#tech`     | Tech stack                           |
+| `#demo`     | Demo video                           |
+| `#team`     | Team                                 |
 
 - `_layouts/default.html` — shared page shell (head, navbar, footer, scripts).
 - `_includes/navbar.html`, `_includes/footer.html` — shared partials.
 - `_data/nav.yml` — single source of truth for the navigation menu.
-- `assets/` — CSS, JS, images, and documents (`assets/docs/poster.pdf`).
+- `assets/` — CSS, JS, images, and documents.
+  - `assets/docs/poster.pdf` — conference poster (linked from the hero).
+  - `assets/docs/kics-paper.pdf` — KICS paper *(add this file)*.
+  - `assets/video/demo.mp4` — demo clip shown in the Demo section (1280×720).
 
 The site is bilingual (English / 한글); the navbar language button swaps all
 `data-en` / `data-ko` text in place and remembers the choice in `localStorage`.
+Both languages render in a single font (Pretendard) so toggling never shifts
+the layout. The active nav link tracks the section in view via a scroll-spy in
+`assets/js/script.js`.
 
 ## Local development
 

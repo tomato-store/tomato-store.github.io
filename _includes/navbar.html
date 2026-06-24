@@ -1,5 +1,5 @@
 <header class="navbar" id="navbar">
-    <a href="{{ '/' | relative_url }}" class="nav-logo">🍅 <span>Tomato Store</span></a>
+    <a href="#hero" class="nav-logo">🍅 <span>Tomato Store</span></a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -8,7 +8,7 @@
     <nav class="nav-menu" id="navMenu">
         <ul>
             {%- for item in site.data.nav %}
-            <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %} data-en="{{ item.en }}" data-ko="{{ item.ko }}">{{ item.en }}</a></li>
+            <li><a href="{{ item.url }}" data-en="{{ item.en }}" data-ko="{{ item.ko }}">{{ item.en }}</a></li>
             {%- endfor %}
         </ul>
         <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">

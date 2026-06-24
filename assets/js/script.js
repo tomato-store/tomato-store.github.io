@@ -80,6 +80,25 @@
         revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* Active nav link is rendered per-page by Jekyll (page.url match),
-       so no scroll-based highlighting is needed on the multi-page site. */
+    /* ---------- Scroll-spy: highlight the in-view section in the nav ---------- */
+    var spyLinks = Array.prototype.slice.call(
+        document.querySelectorAll('.nav-menu ul a[href^="#"]'));
+    var spyTargets = [];
+    for (var s = 0; s < spyLinks.length; s++) {
+        var target = document.querySelector(spyLinks[s].getAttribute('href'));
+        if (target) { spyTargets.push(target); }
+    }
+    if ('IntersectionObserver' in window && spyTargets.length) {
+        var spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) { return; }
+                var id = '#' + entry.target.id;
+                for (var j = 0; j < spyLinks.length; j++) {
+                    spyLinks[j].classList.toggle(
+                        'active', spyLinks[j].getAttribute('href') === id);
+                }
+            });
+        }, { rootMargin: '-50% 0px -45% 0px', threshold: 0 });
+        spyTargets.forEach(function (t) { spy.observe(t); });
+    }
 })();
