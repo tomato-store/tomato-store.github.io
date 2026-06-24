@@ -3,6 +3,7 @@ layout: default
 permalink: /
 ---
 
+<!-- ===================== HERO ===================== -->
 <section class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content reveal">
@@ -18,15 +19,260 @@ permalink: /
             <span class="meta-chip">📅 2026.03.03 – 2026.05.28</span>
             <span class="meta-chip" data-en="👥 6 Members" data-ko="👥 참여 인원 6명">👥 6 Members</span>
             <span class="meta-chip" data-en="🏆 Team 멋쟁이또봇또" data-ko="🏆 팀 멋쟁이또봇또">🏆 Team 멋쟁이또봇또</span>
-            <span class="meta-chip">🤗 tomato-store</span>
+            <span class="meta-chip" data-en="📄 KICS Conference" data-ko="📄 KICS 학술대회">📄 KICS Conference</span>
         </div>
 
+        <!-- Academic-style link row: paper & poster live here now. -->
         <div class="hero-cta">
-            <a class="btn btn-primary" href="https://huggingface.co/tomato-store" target="_blank" rel="noopener"
-               data-en="Visit HuggingFace" data-ko="HuggingFace 바로가기">Visit HuggingFace</a>
+            <a class="btn btn-primary" href="{{ '/assets/docs/kics-paper.pdf' | relative_url }}" target="_blank" rel="noopener"
+               data-en="📄 Paper" data-ko="📄 논문">📄 Paper</a>
+            <a class="btn btn-ghost" href="{{ '/assets/docs/poster.pdf' | relative_url }}" target="_blank" rel="noopener"
+               data-en="🖼️ Poster" data-ko="🖼️ 포스터">🖼️ Poster</a>
+            <a class="btn btn-ghost" href="https://huggingface.co/tomato-store" target="_blank" rel="noopener"
+               data-en="🤗 HuggingFace" data-ko="🤗 HuggingFace">🤗 HuggingFace</a>
             <a class="btn btn-ghost" href="https://github.com/tomato-store" target="_blank" rel="noopener"
-               data-en="GitHub Repository" data-ko="GitHub 저장소">GitHub Repository</a>
+               data-en="💻 GitHub" data-ko="💻 GitHub">💻 GitHub</a>
         </div>
     </div>
-    <a href="{{ '/about/' | relative_url }}" class="scroll-hint" aria-label="Go to About">▼</a>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">▼</a>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about">
+    <div class="section-inner reveal">
+        <p class="section-tag" data-en="About the Project" data-ko="프로젝트 소개">About the Project</p>
+        <h2 class="section-title" data-en="Growing &amp; harvesting, fully automated" data-ko="재배와 수확, 완전 자동화">Growing &amp; harvesting, fully automated</h2>
+        <p class="section-lead"
+           data-en="Tomato Store builds an end-to-end automated pipeline for plant cultivation and harvesting. From environmental sensing and growth management to fruit detection and robotic picking, every stage is coordinated by a Master AI and connected over ROS 2."
+           data-ko="Tomato Store는 식물 재배와 수확을 위한 엔드투엔드 자동화 파이프라인을 구축합니다. 환경 센싱과 생육 관리부터 열매 인식, 로봇 수확까지 모든 단계를 Master AI가 지휘하고 ROS 2로 연결합니다.">Tomato Store builds an end-to-end automated pipeline for plant cultivation and harvesting. From environmental sensing and growth management to fruit detection and robotic picking, every stage is coordinated by a Master AI and connected over ROS 2.</p>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">🌱</div>
+                <h3 data-en="Smart Cultivation" data-ko="스마트 재배">Smart Cultivation</h3>
+                <p data-en="ESP32-based smart-farm sensors monitor the growing environment in real time."
+                   data-ko="ESP32 기반 스마트팜 센서가 생육 환경을 실시간으로 모니터링합니다.">ESP32-based smart-farm sensors monitor the growing environment in real time.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🤖</div>
+                <h3 data-en="Robotic Harvesting" data-ko="로봇 수확">Robotic Harvesting</h3>
+                <p data-en="Dual-arm manipulators and mobile robots detect and harvest ripe fruit."
+                   data-ko="양팔 매니퓰레이터와 모바일 로봇이 잘 익은 열매를 인식하고 수확합니다.">Dual-arm manipulators and mobile robots detect and harvest ripe fruit.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🧠</div>
+                <h3 data-en="Master AI Control" data-ko="Master AI 제어">Master AI Control</h3>
+                <p data-en="A Master AI orchestrates every device, with ROS 2 handling all communication."
+                   data-ko="Master AI가 모든 기기를 지휘하고, ROS 2가 전체 통신을 담당합니다.">A Master AI orchestrates every device, with ROS 2 handling all communication.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SYSTEM ARCHITECTURE ===================== -->
+<section class="section section-alt" id="system">
+    <div class="section-inner reveal">
+        <p class="section-tag" data-en="System Architecture" data-ko="시스템 구조">System Architecture</p>
+        <h2 class="section-title" data-en="How the pieces connect" data-ko="구성 요소의 연결 구조">How the pieces connect</h2>
+        <p class="section-lead"
+           data-en="A Master AI sits at the top of the hierarchy, ROS 2 acts as the communication backbone, and a fleet of robots and sensor nodes carries out the work."
+           data-ko="최상위에 Master AI가 있고, ROS 2가 통신의 중심축 역할을 하며, 다수의 로봇과 센서 노드가 실제 작업을 수행합니다.">A Master AI sits at the top of the hierarchy, ROS 2 acts as the communication backbone, and a fleet of robots and sensor nodes carries out the work.</p>
+
+        <div class="diagram">
+            <div class="diag-tier diag-master">
+                <div class="diag-box box-master">
+                    <span class="diag-emoji">🧠</span>
+                    <strong>Master AI</strong>
+                    <small data-en="Orchestration &amp; decision-making" data-ko="전체 지휘 · 의사결정">Orchestration &amp; decision-making</small>
+                </div>
+            </div>
+
+            <div class="diag-connector"></div>
+
+            <div class="diag-tier diag-bus">
+                <div class="diag-box box-bus">
+                    <span class="diag-emoji">🔗</span>
+                    <strong>ROS 2</strong>
+                    <small data-en="Communication backbone for all nodes" data-ko="모든 노드를 잇는 통신 중심축">Communication backbone for all nodes</small>
+                </div>
+            </div>
+
+            <div class="diag-connector diag-fan"></div>
+
+            <div class="diag-tier diag-devices">
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">🦾</span>
+                    <strong>Dual-arm SO-ARM101</strong>
+                    <small data-en="Precision harvesting" data-ko="정밀 수확">Precision harvesting</small>
+                </div>
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">🚗</span>
+                    <strong>TurtleBot3 Waffle Pi</strong>
+                    <small data-en="Mobile transport" data-ko="이동 · 운반">Mobile transport</small>
+                </div>
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">🦿</span>
+                    <strong>OpenMANIPULATOR</strong>
+                    <small data-en="Manipulation tasks" data-ko="물체 조작">Manipulation tasks</small>
+                </div>
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">⚡</span>
+                    <strong>Jetson AGX Orin / Thor</strong>
+                    <small data-en="On-board AI compute" data-ko="온보드 AI 연산">On-board AI compute</small>
+                </div>
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">🍓</span>
+                    <strong>Raspberry Pi</strong>
+                    <small data-en="Edge device control" data-ko="엣지 디바이스 제어">Edge device control</small>
+                </div>
+                <div class="diag-box box-device">
+                    <span class="diag-emoji">🌡️</span>
+                    <strong>ESP32 Sensor Hub</strong>
+                    <small data-en="Smart-farm sensing" data-ko="스마트팜 센서 종합">Smart-farm sensing</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== TECH STACK ===================== -->
+<section class="section" id="tech">
+    <div class="section-inner reveal">
+        <p class="section-tag" data-en="Tech Stack" data-ko="기술 스택">Tech Stack</p>
+        <h2 class="section-title" data-en="Hardware &amp; platforms we use" data-ko="사용 기기 및 플랫폼">Hardware &amp; platforms we use</h2>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">🦾</div>
+                <h3>Dual-arm SO-ARM101</h3>
+                <p data-en="Dual-arm robot for precise fruit harvesting." data-ko="정밀 열매 수확을 위한 양팔 로봇.">Dual-arm robot for precise fruit harvesting.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🚗</div>
+                <h3>TurtleBot3 Waffle Pi</h3>
+                <p data-en="Mobile robot platform for navigation and transport." data-ko="자율 주행과 운반을 담당하는 모바일 로봇 플랫폼.">Mobile robot platform for navigation and transport.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🦿</div>
+                <h3>OpenMANIPULATOR</h3>
+                <p data-en="Robotic arm for object manipulation tasks." data-ko="물체 조작 작업을 수행하는 로봇 팔.">Robotic arm for object manipulation tasks.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">⚡</div>
+                <h3>Jetson AGX Orin / Thor</h3>
+                <p data-en="High-performance on-board AI compute." data-ko="고성능 온보드 AI 연산 장치.">High-performance on-board AI compute.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🍓</div>
+                <h3>Raspberry Pi</h3>
+                <p data-en="Lightweight edge controller for devices." data-ko="기기 제어를 담당하는 경량 엣지 컨트롤러.">Lightweight edge controller for devices.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🌡️</div>
+                <h3>ESP32</h3>
+                <p data-en="Aggregates all smart-farm environment sensors." data-ko="스마트팜 환경 센서를 종합 관리.">Aggregates all smart-farm environment sensors.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🔗</div>
+                <h3>ROS 2</h3>
+                <p data-en="Manages communication across every node." data-ko="모든 노드 간 통신을 관리.">Manages communication across every node.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🧠</div>
+                <h3>Master AI</h3>
+                <p data-en="Central intelligence orchestrating the system." data-ko="시스템 전체를 지휘하는 중앙 지능.">Central intelligence orchestrating the system.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== DEMO VIDEO ===================== -->
+<section class="section section-alt" id="demo">
+    <div class="section-inner reveal">
+        <p class="section-tag" data-en="Demo" data-ko="데모">Demo</p>
+        <h2 class="section-title" data-en="See it in action" data-ko="작동 영상">See it in action</h2>
+        <p class="section-lead"
+           data-en="A full run of the pipeline — from sensing and growth management to robotic harvesting."
+           data-ko="센싱과 생육 관리부터 로봇 수확까지, 파이프라인 전체가 동작하는 모습입니다.">A full run of the pipeline — from sensing and growth management to robotic harvesting.</p>
+
+        <!-- Demo recording: assets/video/demo.mp4 (1280×720, 16:9, ~79s).
+             No poster image, so the browser shows the first frame until play.
+             To add a still: drop assets/img/demo-poster.jpg and add a
+             poster="{{ '/assets/img/demo-poster.jpg' | relative_url }}" attribute. -->
+        <div class="demo-video">
+            <video controls preload="metadata" playsinline>
+                <source src="{{ '/assets/video/demo.mp4' | relative_url }}" type="video/mp4">
+                <p data-en="Your browser does not support the video tag."
+                   data-ko="브라우저가 video 태그를 지원하지 않습니다.">Your browser does not support the video tag.</p>
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section class="section" id="team">
+    <div class="section-inner reveal">
+        <p class="section-tag" data-en="Our Team" data-ko="팀 소개">Our Team</p>
+        <h2 class="section-title" data-en="The 6 people behind Tomato Store" data-ko="Tomato Store를 만든 6명">The 6 people behind Tomato Store</h2>
+        <p class="section-lead"
+           data-en="Six members collaborate across robotics, AI, and systems."
+           data-ko="로보틱스, AI, 시스템 분야의 6명이 함께 협업합니다.">Six members collaborate across robotics, AI, and systems.</p>
+
+        <div class="team-grid">
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Jeong Yun Ahn" data-ko="안정윤">Jeong Yun Ahn</h3>
+                <p class="team-role" data-en="Leader" data-ko="팀장">Leader</p>
+                <div class="team-links">
+                    <a href="mailto:ajy02267@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/ssffhh030226-lab" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Tae Hyun Kim" data-ko="김태현">Tae Hyun Kim</h3>
+                <p class="team-role" data-en="Member" data-ko="팀원">Member</p>
+                <div class="team-links">
+                    <a href="mailto:ykj8806@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/TAETAE77" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Hyeon Cheol Lim" data-ko="임현철">Hyeon Cheol Lim</h3>
+                <p class="team-role" data-en="Member" data-ko="팀원">Member</p>
+                <div class="team-links">
+                    <a href="mailto:dlaguswjf@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/hyeoncheol-lim" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Hyung Min Sung" data-ko="성형민">Hyung Min Sung</h3>
+                <p class="team-role" data-en="Member" data-ko="팀원">Member</p>
+                <div class="team-links">
+                    <a href="mailto:ajkl9210@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/ajkl9210-hub" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Jun Hyuk Lee" data-ko="이준혁">Jun Hyuk Lee</h3>
+                <p class="team-role" data-en="Member" data-ko="팀원">Member</p>
+                <div class="team-links">
+                    <a href="mailto:leejh2001@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/leejh2001-png" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+            <article class="team-card">
+                <div class="team-avatar">👤</div>
+                <h3 class="team-name" data-en="Ho Jin Kim" data-ko="김호진">Ho Jin Kim</h3>
+                <p class="team-role" data-en="Member" data-ko="팀원">Member</p>
+                <div class="team-links">
+                    <a href="mailto:hojinkim@kookmin.ac.kr">✉️ <span data-en="Email" data-ko="이메일">Email</span></a>
+                    <a href="https://github.com/hojinlab" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
